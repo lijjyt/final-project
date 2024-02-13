@@ -16,8 +16,7 @@
             console.log('showBooks called');
             console.log('Token before fetch:', token);
             enableInput(false);
-            await new Promise(resolve => document.addEventListener("tokenSet", resolve));
-
+            
             const response = await fetch("/books", {
             method: "GET",
             headers: {

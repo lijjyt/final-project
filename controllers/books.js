@@ -2,7 +2,6 @@
 const { StatusCodes } = require('http-status-codes')
 const Book = require('../models/book');
 
-// Controller functions
 const getBooks = async (req, res) => {
     const books = await Book.find({ createdBy:req.user.userId }).sort('createdAt')
     res.status(StatusCodes.OK).json({ books })

@@ -22,6 +22,8 @@ export const setToken = (value) => {
   } else {
         localStorage.removeItem("token");
   }
+  console.log("Token set:", value);
+
 };
 
 export let message = null;
@@ -29,6 +31,7 @@ export let message = null;
 import { showLoginRegister, handleLoginRegister } from "./loginRegister.js";
 import { handleLogin } from "./login.js";
 import { handleRegister } from "./register.js";
+import { showBooks } from "./books.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOMContentLoaded event fired");
@@ -38,5 +41,4 @@ document.addEventListener("DOMContentLoaded", () => {
     handleLogin();
     handleRegister();
     showLoginRegister();
-
   });

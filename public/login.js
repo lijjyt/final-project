@@ -43,12 +43,17 @@ export const handleLogin = () => {
           if (response.status === 200) {
             message.textContent = `Logon successful.  Welcome ${data.user.name}`;
             setToken(data.token);
+            console.log("Token after setToken:", token); 
+
 
             email.value = "";
             password.value = "";
+            console.log('Token:', token);
+            console.log('Stored Token:', localStorage.getItem('token'));
 
-            console.log("About to call showBooks");
             showBooks();
+            //window.location.href = '/books';
+
             } else {
             message.textContent = data.msg;
           }

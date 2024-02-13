@@ -11,12 +11,13 @@
     //  import { showAddEdit } from "./addEdit.js";
     //  import { deleteEntry} from "./addEdit.js"
 
-    export const showBooks = async (token) => {
+    export const showBooks = async () => {
         try {
             console.log('showBooks called');
             console.log('Token before fetch:', token);
+            console.log('Stored Token:', localStorage.getItem('token'));
             enableInput(false);
-            
+
             const response = await fetch("/books", {
             method: "GET",
             headers: {
@@ -31,6 +32,7 @@
             if (response.status === 200) {
                 console.log(token)
                 console.log('successfully trying to show books')
+                window.location.href = '/books'
             }
 
         } catch (err) {
